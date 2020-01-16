@@ -22,11 +22,12 @@ var genCmd = &cobra.Command{
 		var goSrcPath = filepath.Join(goPath, "src")
 		var pwdPath, _ = os.Getwd()
 		var protoPath = filepath.Join(pwdPath, "protos")
+		var templatePath = filepath.Join(goPath, "github.com/Smilefish0/gener/templates")
 
 		// 检查xo生成器命令
 		dsn := helpers.GetDatabaseDSN()
 		xoCmd := "xo"
-		xoArgs := []string{dsn, "-o", "models", "--template-path", "templates"}
+		xoArgs := []string{dsn, "-o", "models", "--template-path", templatePath}
 		xoExec := exec.Command(xoCmd, xoArgs...)
 		_, err := xoExec.Output()
 		if err != nil {

@@ -26,5 +26,6 @@ _testmain.go
 
 .env
 .idea
+go.sum
 models/*.go
 protos/*.proto
