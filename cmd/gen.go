@@ -26,6 +26,15 @@ var genCmd = &cobra.Command{
 		var templatePath = filepath.Join(goSrcPath, "github.com/Smilefish0/gener/templates")
 
 		// 检查protoPath目录
+		if !helpers.Exists(modelPath) {
+			err := os.Mkdir(modelPath, os.ModePerm)
+			if err != nil {
+				fmt.Printf("mkdir failed![%v]\n", err)
+				return
+			}
+		}
+
+		// 检查protoPath目录
 		if !helpers.Exists(protoPath) {
 			err := os.Mkdir(protoPath, os.ModePerm)
 			if err != nil {
@@ -37,7 +46,7 @@ var genCmd = &cobra.Command{
 		// 检查xo生成器命令
 		dsn := helpers.GetDatabaseDSN()
 		xoCmd := "xo"
-		xoArgs := []string{dsn, "-o", "models", "--template-path", templatePath}
+		xoArgs := []string{"\"" + dsn + "\"", "-o", "models", "--template-path", templatePath}
 		xoExec := exec.Command(xoCmd, xoArgs...)
 		_, err := xoExec.Output()
 		if err != nil {
