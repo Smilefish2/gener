@@ -11,13 +11,12 @@ import (
 func GetDatabaseDSN() string {
 	dbConfig := configer.DatabaseConfig()
 	if dbConfig.GetConnection() == "mysql" {
-		return fmt.Sprintf("mysql://%v:%v@%v:%v/%v?charset=%s&parseTime=True&loc=Local",
+		return fmt.Sprintf("mysql://%v:%v@%v:%v/%v",
 			dbConfig.GetUsername(),
 			dbConfig.GetPassword(),
 			dbConfig.GetHost(),
 			dbConfig.GetPort(),
 			dbConfig.GetDatabase(),
-			dbConfig.GetCharset(),
 		)
 		// DB = DB.Set("gorm:table_options", "CHARSET=utf8")
 	} else if dbConfig.GetConnection() == "postgres" {
