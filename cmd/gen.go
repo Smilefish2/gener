@@ -41,8 +41,7 @@ var genCmd = &cobra.Command{
 		xoExec := exec.Command(xoCmd, xoArgs...)
 		_, err := xoExec.Output()
 		if err != nil {
-			fmt.Println("xo命令未找到，请先运行: go get -u github.com/xo/xo")
-			//fmt.Fprintf(os.Stderr, "The command failed to perform: %s (Command: %s, Arguments: %s)", err, xoCmd, xoArgs)
+			fmt.Fprintf(os.Stderr, "The command failed to perform: %s (Command: %s, Arguments: %s)", err, xoCmd, xoArgs)
 			return
 		}
 
