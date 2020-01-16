@@ -3,6 +3,7 @@ package cmd
 import (
 	"fmt"
 	"github.com/Smilefish0/gener/helpers"
+	"github.com/fatih/color"
 	"github.com/spf13/cobra"
 	"os"
 	"os/exec"
@@ -60,7 +61,8 @@ var genCmd = &cobra.Command{
 		xoExec := exec.Command(xoCmd, xoArgs...)
 		_, err := xoExec.Output()
 		if err != nil {
-			fmt.Fprintf(os.Stderr, "The command failed to perform: %s (Command: %s, Arguments: %s)", err, xoCmd, xoArgs)
+			//fmt.Fprintf(os.Stderr, "The command failed to perform: %s (Command: %s, Arguments: %s)", err, xoCmd, xoArgs)
+			color.Blue("命令运行失败: 请先运行 gener doctor命令检查运行环境\n")
 			return
 		}
 
@@ -70,7 +72,8 @@ var genCmd = &cobra.Command{
 		cpExec := exec.Command(cpCmd, cpArgs...)
 		_, err = cpExec.Output()
 		if err != nil {
-			fmt.Fprintf(os.Stderr, "The command failed to perform: %s (Command: %s, Arguments: %s)", err, cpCmd, cpArgs)
+			//fmt.Fprintf(os.Stderr, "The command failed to perform: %s (Command: %s, Arguments: %s)", err, cpCmd, cpArgs)
+			color.Blue("cp命令运行失败: 请先运行 gener doctor命令检查运行环境\n")
 			return
 		}
 

@@ -1,12 +1,14 @@
 package cmd
 
 import (
+	"fmt"
 	"github.com/Smilefish0/gener/helpers"
 	"github.com/fatih/color"
 	"github.com/spf13/cobra"
 	"os"
 	"os/exec"
 	"path/filepath"
+	"runtime"
 )
 
 var doctorCmd = &cobra.Command{
@@ -16,6 +18,11 @@ var doctorCmd = &cobra.Command{
 	Long:    `检查运行环境是否满足需求`,
 
 	Run: func(cmd *cobra.Command, args []string) {
+
+		// checko OS
+		if runtime.GOOS == "windows" {
+			fmt.Println("抱歉，命令暂不支持windows系统，请使用 *nix 类系统")
+		}
 
 		// check $GOPATH
 		var goPath = os.Getenv("GOPATH")
