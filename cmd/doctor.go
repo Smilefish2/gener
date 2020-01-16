@@ -23,6 +23,7 @@ var doctorCmd = &cobra.Command{
 		if runtime.GOOS == "windows" {
 			fmt.Println("抱歉，命令暂不支持windows系统，请使用 *nix 类系统")
 		}
+		color.Blue("OS: %s\n", runtime.GOOS)
 
 		// check $GOPATH
 		var goPath = os.Getenv("GOPATH")
