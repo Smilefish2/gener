@@ -43,8 +43,9 @@ var doctorCmd = &cobra.Command{
 
 		// 检查配置文件
 		envFilePath := filepath.Join(pwdPath, ".env")
+		envExampleFilePath := filepath.Join(goPath, "src", "github.com/Smilefish0/gener", ".env.example")
 		if !helpers.Exists(envFilePath) {
-			color.Red(".env文件未找到，请先配置.env文件中的数据库连接参数")
+			color.Red(".env文件未找到，请先配置.env文件中的数据库连接参数，配置文件参考：" + envExampleFilePath)
 			return
 		}
 		color.Blue(".env File: %s\n", envFilePath)
