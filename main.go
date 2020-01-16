@@ -1,7 +1,7 @@
 package main
 
 import (
-	"gener/cmd"
+	"github.com/Smilefish0/gener/cmd"
 	_ "github.com/joho/godotenv/autoload"
 )
 
