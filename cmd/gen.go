@@ -75,7 +75,11 @@ var genCmd = &cobra.Command{
 		}
 
 		// 切换目录到$GOPATH/src并执行一组命令
-		cmdStr := fmt.Sprintf("cd %s && proteus -p gener/models -f gener/protos && cp gener/protos/generated.proto %s && rm -rf gener", goSrcPath, protoPath)
+		cmdStr := fmt.Sprintf(
+			"cd %s && proteus -p gener/models -f gener/protos && cp gener/protos/gener/models/generated.proto %s && rm -rf gener",
+			goSrcPath,
+			protoPath,
+		)
 		cmdMany := exec.Command("sh", "-c", cmdStr)
 		if _, err := cmdMany.CombinedOutput(); err != nil {
 			fmt.Errorf("Error: %v\n", err)
