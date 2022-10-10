@@ -1,4 +1,4 @@
-module github.com/Smilefish0/gener
+module github.com/Smilefish2/gener
 
 go 1.13
 

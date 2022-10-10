@@ -3,7 +3,7 @@ package helpers
 import (
 	"errors"
 	"fmt"
-	configer "github.com/Smilefish0/gener/config"
+	configer "github.com/Smilefish2/gener/config"
 	"os"
 )
 

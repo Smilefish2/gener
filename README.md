@@ -4,7 +4,7 @@
 
 ### 安装
 ```
-$ go get -u -v github.com/Smilefish0/gener
+$ go get -u -v github.com/Smilefish2/gener
 ```
 
 ### 使用

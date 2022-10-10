@@ -2,7 +2,7 @@ package cmd
 
 import (
 	"fmt"
-	"github.com/Smilefish0/gener/helpers"
+	"github.com/Smilefish2/gener/helpers"
 	"github.com/fatih/color"
 	"github.com/spf13/cobra"
 	"os"
@@ -51,7 +51,7 @@ var doctorCmd = &cobra.Command{
 
 		// 检查配置文件
 		envFilePath := filepath.Join(pwdPath, ".env")
-		envExampleFilePath := filepath.Join(goPath, "src", "github.com/Smilefish0/gener", ".env.example")
+		envExampleFilePath := filepath.Join(goPath, "src", "github.com/Smilefish2/gener", ".env.example")
 		if !helpers.Exists(envFilePath) {
 			color.Red(".env文件未找到，请先配置.env文件中的数据库连接参数，配置文件参考：" + envExampleFilePath)
 			return

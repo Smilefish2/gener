@@ -2,7 +2,7 @@ package cmd
 
 import (
 	"fmt"
-	"github.com/Smilefish0/gener/helpers"
+	"github.com/Smilefish2/gener/helpers"
 	"github.com/fatih/color"
 	"github.com/spf13/cobra"
 	"os"
@@ -25,7 +25,7 @@ var genCmd = &cobra.Command{
 		var generPath = filepath.Join(pwdPath, "gener")
 		var modelPath = filepath.Join(generPath, "models")
 		var protoPath = filepath.Join(generPath, "protos")
-		var templatePath = filepath.Join(goSrcPath, "github.com/Smilefish0/gener/templates")
+		var templatePath = filepath.Join(goSrcPath, "github.com/Smilefish2/gener/templates")
 
 		// 检查generPath目录
 		if !helpers.Exists(generPath) {
