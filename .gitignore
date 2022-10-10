@@ -27,3 +27,4 @@ _testmain.go
 .env
 .idea
 gener
+go.sum
